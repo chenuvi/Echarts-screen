@@ -7,28 +7,34 @@ import RingBar from "./components/RingBar.vue";
 import TotalData from "./components/TotalData.vue";
 import VerticalBar from "./components/VerticalBar.vue";
 import WordCloud from "./components/WordCloud.vue";
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 import { getVisualization } from "@/api/visualization.js";
 
 const data = ref(null);
+let timer = null;
 const loadData = async () => {
   data.value = await getVisualization();
-  console.log('data: ',data.value);
 };
+onMounted(() => {
+  timer = setInterval(() => {
+    loadData();
+  }, 3000);
+});
 
-loadData();
+onBeforeUnmount(() => clearInterval(timer));
 </script>
 
 <template>
   <div>
     <div
-      class="bg-[url('assets/images/bg.png')] bg-cover bg-center h-screen text-white p-3 flex overflow-hiddens"
+      class="bg-[url('assets/images/bg.png')] bg-cover bg-center h-screen text-white p-3 flex overflow-hidden"
+      v-if="data"
     >
       <!-- left -->
       <div class="flex-1 mr-3 bg-opacity-50 bg-slate-800 p-3">
         <!-- 横向柱状图 -->
-        <HorizontalBar class="h-1/3 box-border pb-2" />
+        <HorizontalBar class="h-1/3 box-border pb-2" :data="data.regionData" />
         <!-- 雷达图 -->
         <RadarBar class="h-1/3 box-border pb-2" />
         <!-- 关系图 -->
