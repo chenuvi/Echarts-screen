@@ -1,5 +1,5 @@
 <!--  -->
-<script setup lang="ts">
+<script setup>
 import * as echarts from "echarts";
 import { ref, onMounted, watch } from "vue";
 

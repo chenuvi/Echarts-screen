@@ -52,7 +52,7 @@ onBeforeUnmount(() => clearInterval(timer));
         <!-- 竖向柱状图 -->
         <VerticalBar class="h-1/3 box-border pb-2" :data="data.serverData" />
         <!-- 环形图 -->
-        <RingBar class="h-1/3 box-border pb-2" />
+        <RingBar class="h-1/3 box-border pb-2" :data="data.abnormalData"/>
         <!-- 文档云图 -->
         <WordCloud class="h-1/3" />
       </div>
