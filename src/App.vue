@@ -54,9 +54,10 @@ onBeforeUnmount(() => clearInterval(timer));
         <!-- 环形图 -->
         <RingBar class="h-1/3 box-border pb-2" :data="data.abnormalData" />
         <!-- 文档云图 -->
-        <WordCloud class="h-1/3" />
+        <WordCloud class="h-1/3" :data="data.wordCloudData" />
       </div>
     </div>
+    <div v-else class="">暂无数据</div>
   </div>
 </template>
 
