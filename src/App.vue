@@ -43,7 +43,10 @@ onBeforeUnmount(() => clearInterval(timer));
       <!-- center -->
       <div class="w-1/2 mr-3 flex flex-col">
         <!-- 数据总览图 -->
-        <TotalData class="bg-opacity-50 bg-slate-800 p-3" />
+        <TotalData
+          class="bg-opacity-50 bg-slate-800 p-3"
+          :data="data.totalData"
+        />
         <!-- 地图可视化 -->
         <MapChart class="bg-opacity-50 bg-slate-800 p-3 mt-3 flex-1" />
       </div>
@@ -57,7 +60,6 @@ onBeforeUnmount(() => clearInterval(timer));
         <WordCloud class="h-1/3" :data="data.wordCloudData" />
       </div>
     </div>
-    <div v-else class="">暂无数据</div>
   </div>
 </template>
 
