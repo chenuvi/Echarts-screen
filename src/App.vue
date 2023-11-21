@@ -36,7 +36,7 @@ onBeforeUnmount(() => clearInterval(timer));
         <!-- 横向柱状图 -->
         <HorizontalBar class="h-1/3 box-border pb-2" :data="data.regionData" />
         <!-- 雷达图 -->
-        <RadarBar class="h-1/3 box-border pb-2" />
+        <RadarBar class="h-1/3 box-border pb-2" :data="data.riskData" />
         <!-- 关系图 -->
         <Relation class="h-1/3" />
       </div>
