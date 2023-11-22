@@ -2,7 +2,7 @@
 <script setup>
 import mapJson from "@/assets/json/china.json";
 import * as echarts from "echarts";
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 
 const props = defineProps({
   data: {
@@ -40,7 +40,7 @@ const renderChart = () => {
           },
         },
         emphasis: {
-          texteStyle: {
+          textStyle: {
             color: "#fff",
           },
         },
@@ -220,11 +220,6 @@ const renderChart = () => {
   // 3.通过实例.setOptions(options)
   myChart.setOption(options);
 };
-
-watch(
-  () => props.data,
-  () => renderChart()
-);
 </script>
 
 <template>

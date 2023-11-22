@@ -62,7 +62,7 @@ watch(
 
 <template>
   <div>
-    <div>【关键词】</div>
+    <div class="pt-2">【关键词】</div>
     <div ref="target" class="w-full h-full"></div>
   </div>
 </template>

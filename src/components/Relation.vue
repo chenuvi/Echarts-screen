@@ -218,7 +218,7 @@ watch(
 
 <template>
   <div>
-    <div>【数据传递关系】</div>
+    <div class="pt-2">【数据传递关系】</div>
     <div ref="target" class="w-full h-full"></div>
   </div>
 </template>
